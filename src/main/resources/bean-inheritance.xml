@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="superBean" class="com.oonurkuru.spring.beans.BeanInheritance.SuperBean">
+        <property name="var1" value="Variable 1"/>
+        <property name="var2" value="Variable 2"/>
+    </bean>
+
+    <bean id="childBean" class="com.oonurkuru.spring.beans.BeanInheritance.ChildBean" parent="superBean">
+        <property name="var3" value="Variable 3"/>
+    </bean>
+</beans>
