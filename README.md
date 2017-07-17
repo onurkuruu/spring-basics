@@ -21,11 +21,11 @@
 
 **Spring container**, **Spring Framework**’ ün temelini oluşturur. Bu konteyner sayesinde beanlerin yönetimi sağlanır, birbirlerine bağlanır, yaşam döngülerinin kontrolü sağlanır. Bu işlemleri **Dependency Injection** sayesinde yapar.
 
-**IoC** nesne yönetim işlemlerinin geliştiriciden alınıp frameworke devredilmesidir. **DI** ise bunu gerçekleştirmek için bir yöntemdir.
+**IoC** nesne yönetim işlemlerinin geliştiriciden alınıp frameworke devredilmesidir. **DI** ise bunu gerçekleştirmek için bir yöntemdir.[Daha detaylı bilgi için](https://github.com/onurkuruu/java-solid#dependency-inversion-principle)
 
 ### Spring Bean
 
-Uygulamaların temelini oluşturur ve yönetimleri **Spring IoC Container** tarafından sağlanır. Beanlerin yönetimleri diğer nesnelerden farklıdır.
+Uygulamaların temelini oluşturur ve yönetimleri **Spring IoC Container** tarafından sağlanır.
 
 #### Bean Scopes
 Bu kapsamlar sayesinde beanlerin yaşam döngüleri belirlenir ve yönetimleri sağlanır.
@@ -38,7 +38,7 @@ Bu kapsamlar sayesinde beanlerin yaşam döngüleri belirlenir ve yönetimleri s
 
 Bir bean, yeni oluşturulup konteynera eklenmiş ya da yok edilip konteynerdan silinmiş olabilir.
 
-* **Bean initialization callbacks**: **InitializingBean** arayüzünden sağlanan **afterPropertiesSet()** fonksiyonu ile sağlanır ya da xml içerisinde tanımlanırken **init-method** özelliği sayesinde farklı bir fonksiyonda belirtilebilir.
+* **Bean initialization callbacks**: **InitializingBean** arayüzünden sağlanan **afterPropertiesSet()** fonksiyonu ile sağlanır ya da xml içerisinde tanımlanırken **init-method** özelliği sayesinde farklı bir fonksiyon da belirtilebilir.
 
 ```java
 public class SpringBean implements InitializingBean {
@@ -86,7 +86,7 @@ public class SpringBean {
 
 #### Beanler Arası Kalıtım
 
-Bir bean tanımlanırken yapılandırma ayarları, kurucu argümanlar ve çeşitli özellik tanımlamaları içeriri. Bean **Inheritance** ile bu bilgiler alt beanlere aktarılabilir.
+Bir bean tanımlanırken yapılandırma ayarları, kurucu argümanlar ve çeşitli özellik tanımlamaları içerir. Bean **Inheritance** ile bu bilgiler alt beanlere aktarılabilir.
 
 ```xml
 <bean id = "superBean" class = "com.oonurkuru.spring.SuperBean">
@@ -125,9 +125,9 @@ public class Person{
 </bean>
 ```
 
-#### Injection Collection
+#### Injecting Collection
 
-Sınıflar içerisinde ki **List**, **Set**, **Map** ve **Properties** sınıf tanımlamalarının yapılması sağlanır.
+Sınıflarımızda tanımlı **List**, **Set**, **Map** ve **Properties** tipindeki değişkenlerimize atama yapabiliriz.
 
 ```java
 public class Employee{
