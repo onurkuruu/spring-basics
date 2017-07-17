@@ -161,7 +161,7 @@ public class PersonConfig{
    }
 }
 ```
-**@Import** notasyonu ile ayarların yapıldığı bir sınıfı işaret ederek ayarların direkt olarak yüklenmesi sağlanır.
+**@Import** notasyonu ile ayarların yapıldığı bir sınıfı işaret ederek ayarların direkt olarak yüklenmesi sağlanır. xml içerisinde ki ```xml<import></import>``` etiketine benzetilebilir. Aşağıda ki örnekte B sınıfı yüklendiğinde A sınıfı ayarlarıda yüklenir.
 
 ```java
 @Configuration
@@ -175,9 +175,6 @@ public class ConfigA {
 @Configuration
 @Import(ConfigA.class)
 public class ConfigB {
-   @Bean
-   public B a() {
-      return new A(); 
-   }
+   
 }
 ```
